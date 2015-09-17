@@ -69,7 +69,7 @@ module.exports = function (grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'public/js/basic.browserify.min.js': ['public/js/dev/self/basic.browserify.js']
+                    'public/js/basic.browserify.min.js': ['public/js/basic.browserify.js']
                 }
             }
         },
