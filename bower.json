@@ -1,0 +1,15 @@
+{
+  "name": "template2",
+  "version": "0.0.0",
+  "authors": [
+    "mrhop <233402923@qq.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
