@@ -9466,7 +9466,7 @@ $(document).ready(function () {
      }
      })*/
     //scrollspy
-    $('body').scrollspy({target: '.nav-menu', offset: 65});
+    $('body').scrollspy({target: '.nav-menu', offset: 105});
     //smoothscroll
     $('.smooth-scroll').smoothScroll({easing: 'easeInOutExpo', speed: 800, offset: -55});
     //not scroll to hide

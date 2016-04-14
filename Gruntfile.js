@@ -8,6 +8,7 @@ module.exports = function (grunt) {
                 options: {
                     force: true,
                     sassDir: ['scss'],
+                    specify: 'scss/basic.scss',
                     cssDir: ['public/css'],
                     environment: 'development'
                 }
@@ -16,6 +17,7 @@ module.exports = function (grunt) {
                 options: {
                     force: true,
                     sassDir: ['scss'],
+                    specify: 'scss/basic.scss',
                     cssDir: ['public/css'],
                     environment: 'production'
                 }
@@ -51,6 +53,15 @@ module.exports = function (grunt) {
                     src: ['node_modules/holderjs/holder.min.js'],
                     dest: 'public/js/dev/'
                 }]
+            }
+            ,main: {
+                files:[
+                    {expand: true,cwd: 'public/', src: ['*.html'], dest: 'dest/', filter: 'isFile'},
+                    {expand: true,cwd: 'public/', src: ['assets/**'], dest: 'dest/'},
+                    {expand: true,cwd: 'public/',  src: ['js/basic.browserify.min.js'], dest: 'dest/', filter: 'isFile'},
+                    {expand: true,cwd: 'public/',  src: ['js/dev/holder.min.js'], dest: 'dest/', filter: 'isFile'},
+                    {expand: true,cwd: 'public/',  src: ['css/**'], dest: 'dest/', filter: 'isFile'}
+                ]
             }
         },
         browserify: {
@@ -92,5 +103,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.registerTask('build', "Builds the application.",
-        ['compass:prod', 'browserify:basic', 'uglify']);
+        ['compass:prod', 'browserify:basic', 'uglify','copy:main']);
 }
